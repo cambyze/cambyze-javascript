@@ -1,3 +1,6 @@
+// Script to perform classic operations
+
+
 // Function to remove a substring
 function removeString(stringToModify, stringToRemove) {
     while (stringToModify.includes(stringToRemove)) {
