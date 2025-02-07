@@ -24,6 +24,7 @@ console.log("Cambyze home page")
 // Prompt a user name
 let userName = prompt("Enter your name: ")
 console.log(userName)
+let saveUsername = userName
 
 // Test if not empty
 if (userName.length === 0) {
