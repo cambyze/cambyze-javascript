@@ -19,12 +19,28 @@ function findStringInArray(strings, stringToSearch) {
     return "### " + stringToSearch + "NOT FOUND ###"
 }
 
+// test the structure of the email
+function validateEmail(input) {
+
+    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  
+    if (input.value.match(validRegex)) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+
 console.log("Cambyze home page")
+
 
 // Prompt a user name
 let userName = prompt("Enter your name: ")
 console.log(userName)
 let saveUsername = userName
+
+
 
 // Test if not empty
 if (userName.length === 0) {

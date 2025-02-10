@@ -11,20 +11,43 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <div class="container">
-    <div class="main-header">Cambyze Home Page</div>
-    <div class="box">
-    <div class="header">JavaScript training</div>
-    <div class="content" id="content">
-        <p class="content">Choose your style:</p>
-        <input class="content" type="radio" name="optionSource" id="normal" value="1" checked>
-        <label class="content" for="normal">normal</label>
-        <input class="content" type="radio" name="optionSource" id="underline" value="2">
-        <label class="content" for="underline">underline</label>
-        <p class="content" id="vartext">Thx a lot</p>
-        <div class="content" id="varblock"></div>
-        <div class="content" id="varblock2"></div>
-    </div>
+    <section class="bg-primary text-center py-5">
+        <h1 class="text-light">Cambyze Home page</h1> 
+    </section>
+    <section class="my-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="alert alert-primary text-center ">
+                    Javascript Training Inscription
+                    </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="content">
+            <form>
+                <p>
+                    <label for="username">Name *</label>
+                    <input class ="content" type="text" id="username" name="username" placeholder="Your name" required>
+                </p><p>
+                    <label for="email">Email *</label>
+                    <input class="content" type="email" id="email" name="email" placeholder="Your email" required>
+                    <input type="submit" id="submit" value="Submit">
+                </p>
+            </form>
+        </div>
+        <p>Choose your style:</p>
+        <input type="radio" name="optionSource" id="normal" value="1" checked>
+        <label for="normal">Normal</label>
+        <input type="radio" name="optionSource" id="underline" value="2">
+        <label for="underline">Underline</label>
+        <p class="normal"  id="vartext">Thx a lot</p>
+        <div id="varblock"></div>
+        <div id="varblock2"></div>
+    </section>
 </body>
 
 </html>
