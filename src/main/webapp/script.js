@@ -89,5 +89,5 @@ class Person {
  
  const me = new Person("Thierry", "NESTELHUT")
  
- // Returns name + last nameTh
+ // Returns name + last name
  console.log(me.getFullName())
