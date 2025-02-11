@@ -5,7 +5,7 @@
 function removeString(stringToModify, stringToRemove) {
     while (stringToModify.includes(stringToRemove)) {
         console.log(stringToModify.indexOf(stringToRemove))
-        stringToModify = stringToModify.substring(0,stringToModify.indexOf(stringToRemove)) + stringToModify.substring(stringToModify.indexOf(stringToRemove)+2)
+        stringToModify = stringToModify.substring(0, stringToModify.indexOf(stringToRemove)) + stringToModify.substring(stringToModify.indexOf(stringToRemove) + 2)
     }
     return stringToModify
 }
@@ -19,16 +19,11 @@ function findStringInArray(strings, stringToSearch) {
     return "### " + stringToSearch + "NOT FOUND ###"
 }
 
-// test the structure of the email
+// test the structure of an email
 function validateEmail(input) {
 
     const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  
-    if (input.value.match(validRegex)) {
-      return true;
-    } else {
-      return false;
-    }
+    return input.value.match(validRegex);
 }
 
 
@@ -49,34 +44,50 @@ if (userName.length === 0) {
 
 console.log(correctNames)
 console.log(badNames)
-console.log(findStringInArray(correctNames,userName))
-console.log(findStringInArray(badNames,userName))
+console.log(findStringInArray(correctNames, userName))
+console.log(findStringInArray(badNames, userName))
 
 //console.log(badNames.findIndex(includes(userName)))
 
 
 // Test it from the collections
 switch (userName) {
-    case findStringInArray(correctNames,userName) :{
+    case findStringInArray(correctNames, userName): {
         console.log("OKI")
         break
     }
-    case findStringInArray(badNames,userName) :{
+    case findStringInArray(badNames, userName): {
         console.log("NOK")
         break
     }
-    default :{
+    default: {
         console.log("N/A")
     }
 }
 
 // Simple loop with concatenation
-for (let i=1; i<=5; i++) {
+for (let i = 1; i <= 5; i++) {
     userName += "/*" + i
 }
 console.log(userName)
 
 // Remove the "/*"
-userName = removeString(userName,"/*")
+userName = removeString(userName, "/*")
 console.log(userName)
 
+// Creation of a class
+class Person {
+    constructor(firstName, lastName) {
+        this._firstName = firstName
+        this._lastName = lastName
+    }
+ 
+    getFullName() {
+        return `${this._firstName} ${this._lastName}`
+    }
+ }
+ 
+ const me = new Person("Thierry", "NESTELHUT")
+ 
+ // Returns name + last nameTh
+ console.log(me.getFullName())
