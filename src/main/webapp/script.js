@@ -19,6 +19,16 @@ function findStringInArray(strings, stringToSearch) {
     return "### " + stringToSearch + "NOT FOUND ###"
 }
 
+
+function findStringInArray2(strings, stringToSearch) {
+    for (let string of strings) {
+        if (stringToSearch === string) {
+            return stringToSearch
+        }
+    }
+    return "### " + stringToSearch + "NOT FOUND ###"
+}
+
 // test the structure of an email
 function validateEmail(input) {
 
@@ -45,6 +55,7 @@ if (userName.length === 0) {
 console.log(correctNames)
 console.log(badNames)
 console.log(findStringInArray(correctNames, userName))
+console.log(findStringInArray2(correctNames, userName))
 console.log(findStringInArray(badNames, userName))
 
 //console.log(badNames.findIndex(includes(userName)))
@@ -91,3 +102,102 @@ class Person {
  
  // Returns name + last name
  console.log(me.getFullName())
+
+// The result variable is constant, but not its members.
+ const result = {
+    field1: "value1",
+    field2: "value2",
+    fieldWithTypeInteger: 42,
+    fieldWithTypeFloat: 42.12345,
+    fieldWithTypeBoolean: true,
+    "this is a field with weird chars ?/! so we have to add doublequotes around the name": "Whatever",
+  }
+  // change the value of 1 field of the object
+  result.fieldWithTypeBoolean = false
+  console.log(result)
+
+
+  // example 1
+const obj1 = {
+    a: 1,
+    b: 2,
+  }
+  
+  // example 2
+  const a = 1
+  const b = 2
+  const obj2 = {
+    "a": a,
+    "b": b,
+  }
+  
+  // example 3
+  const obj3 = { a, b }
+  
+  // returns an object made of 3 identical objects
+  console.log({ obj1, obj2, obj3 })
+
+
+const isObj1EqualToObj2 = (obj1 === obj2)
+const isObj1EqualToObj3 = (obj1 === obj3)
+const isObj2EqualToObj3 = (obj2 === obj3)
+
+// returns an object made of 3 identical objects + the booleans
+console.log({ 
+  obj1, 
+  obj2, 
+  obj3, 
+  isObj1EqualToObj2, 
+  isObj1EqualToObj3, 
+  isObj2EqualToObj3,
+})
+
+let y // x has no value at all, it is undefined
+const isItUndefined = (y === undefined)
+console.log({ y, isItUndefined })
+
+// Null is not undefined
+const x = null
+const isItUndefined2 = (x === undefined)
+console.log({ x, isItUndefined2 })
+
+const obj = { lastName: "PARKER" }
+const { firstName = "default first name", lastName } = obj // firstName is NOT undefined anymore
+console.log({obj, firstName,  lastName})
+
+const length = y?.length // will NOT fail, length will be "undefined"
+console.log({ length })
+const length2 = y?.length || 0 // length will be 0, even though firstName is undefined
+console.log({ length2 })
+
+
+function countNumbers(array) {
+    let count = 0
+    for (let item of array) {
+      // add 1 if the item is an number  
+      if (typeof item === "number") count++
+    }
+    return count
+  }
+  
+  const someArray = [1, "bla", "groot", true, 42.12345] 
+  const anotherArray = [1, 2, 3, 4]
+  const count1 = countNumbers(someArray)
+  const count2 = countNumbers(anotherArray)
+  
+  // return an object with 2 fields count1 and count2
+  console.log({ count1, count2 })
+
+
+
+  const superHeroes = [
+    { name: "SUPERMAN", lastName: "PARKER", firstName: "Peter" },
+    { name: "SPIDERMAN", lastName: "KENT", firstName: "Clark" },
+    { name: "IRONMAN", lastName: "STARK", firstName: "Tony" },
+  ]
+  const lastNames = superHeroes.map(it => it.lastName) // we define an anonymous function that takes an superheroe item and returns his lastName
+  console.log(lastNames) // lastNames is an array of strings
+
+  // will return the fist item that matches the criteria "its lastName is KENT"
+  const superman = superHeroes.find(it => it.lastName === "KENT")
+  console.log(superman)
