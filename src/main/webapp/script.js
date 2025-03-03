@@ -167,7 +167,7 @@ console.log({obj, firstName,  lastName})
 
 const length = y?.length // will NOT fail, length will be "undefined"
 console.log({ length })
-const length2 = y?.length || 0 // length will be 0, even though firstName is undefined
+const length2 = y?.length || 0 // length will be 0, even though y is undefined
 console.log({ length2 })
 
 
@@ -201,3 +201,13 @@ function countNumbers(array) {
   // will return the fist item that matches the criteria "its lastName is KENT"
   const superman = superHeroes.find(it => it.lastName === "KENT")
   console.log(superman)
+
+  const obj4 = {
+    field1: "bla",
+    field2: "bla",
+    field3: null,
+    field4: undefined,
+  }
+  // returns an object with 3 fields only, "field4" being trimmed out as it has the value "undefined".
+  console.log(JSON.stringify(obj4))
+  
